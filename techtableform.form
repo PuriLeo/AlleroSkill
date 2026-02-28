@@ -1,0 +1,172 @@
+
+FILE_TYPE=FORM_DEFN VERSION=2    
+FORM  tech_create                           
+FIXED                            
+PORT 1000 1000                    
+HEADER "Create Techtable"         
+
+POPUP <sold_color_value_list>"GREEN""GREEN","BLUE""BLUE","YELLOW""YELLOW","BLACK""BLACK","OTHER""OTHER". 
+POPUP <silk_color_value_list>"WHITE""WHITE","RED""RED","YELLOW""YELLOW","BLACK""BLACK","OTHER""OTHER".
+POPUP <surface_value_list>"HASL(Sn/Pb)""HASL(Sn/Pb)","HASL(Pb-Free)""HASL(Pb-Free)","IMMERSION GOLD""IMMERSION GOLD","ENIG""ENIG","OSP""OSP","OTHER""OTHER".
+POPUP <material_value_list>"FR-4""FR-4","FR-4 TG150""FR-4 TG150","FR-4 TG170""FR-4 TG170","ROGERS 4003""ROGERS 4003","ROGERS 4350B""ROGERS 4350B","OTHER""OTHER".
+POPUP <via_tech_value_ist>"ALL VIA FILLED""ALL VIA FILLED","BY GERBER""BY GERBER","OTHER""OTHER".
+POPUP <inspection_list>"IPC-II""IPC-II","IPC-III""IPC-III","GJB""GJB"，"GB-4588""GB-4588","OTHER""OTHER".
+POPUP <board_thickness_list>"0.6""0.6","0.8""0.8","1.0""1.0","1.2""1.2","1.6""1.6","2.0""2.0","3.0""3.0"
+   
+
+TILE 
+
+
+
+
+TEXT "Board name: "   #board name 
+TLOC 1 2
+ENDTEXT
+FIELD board_name
+TLOC 4 2
+STRFILLIN  24 24
+ENDFIELD
+                  
+TEXT "Layers:"       #baord layers 
+TLOC 35 2
+ENDTEXT
+FIELD layer_num
+TLOC 39 2
+INTFILLIN  12 12
+ENDFIELD
+
+TEXT "Board size: W" #board size 
+TLOC 1 5
+ENDTEXT
+FIELD board_size_w
+TLOC 4 5
+STRFILLIN 10 10
+ENDFIELD
+TEXT "*        H"
+TLOC 16 5 
+ENDTEXT 
+FIELD board_size_h
+TLOC 18 5
+STRFILLIN 10 10
+ENDFIELD
+TEXT "mm"
+TLOC 29 5
+ENDTEXT
+
+TEXT "Thickness: " #board thickness
+TLOC 35 5
+ENDTEXT 
+FIELD board_thickness
+TLOC 39 5
+ENUMSET 12
+POP "board_thickness_list"
+ENDFIELD
+TEXT "mm   "
+TLOC  52 5
+ENDTEXT 
+
+
+
+
+
+
+TEXT "Solder Color: " # solder color 
+TLOC 1 8
+ENDTEXT
+FIELD sold_color_enum
+FLOC 4 8
+ENUMSET 24
+POP "sold_color_value_list"
+ENDFIELD
+
+FIELD impendence_check
+TLOC 35 8
+CHECKLIST "Impedence"
+ENDFIELD
+
+
+TEXT "Silk Color: " # silk color 
+TLOC 1 11
+ENDTEXT
+FIELD silk_color_enum
+FLOC 4 11
+ENUMSET 24
+POP "silk_color_value_list"
+ENDFIELD
+
+TEXT "Surface:    "  # surface finished 
+TLOC 1 14
+ENDTEXT
+FIELD surface_enum
+FLOC 4 14
+ENUMSET 24
+POP "surface_value_list"
+ENDFIELD
+
+TEXT "Material:"   # board material 
+TLOC 1 17
+ENDTEXT 
+FIELD material_enum
+FLOC 4 17
+ENUMSET 24
+POP "material_value_list"
+ENDFIELD
+
+TEXT "Via tech:   " # board techinic 
+TLOC 1 20
+ENDTEXT
+FIELD via_tech_enum
+FLOC 4 20
+ENUMSET 24
+POP "via_tech_value_ist"
+ENDFIELD 
+
+TEXT "inspection:    " # inspection standard
+TLOC 1 23
+ENDTEXT 
+FIELD inspection_enum
+FLOC 4 23
+ENUMSET 24
+POP "inspection_list"
+ENDFIELD
+
+TEXT "Date:  "    # current date 
+TLOC 1 26
+ENDTEXT 
+FIELD  current_date
+TLOC 4 26 
+STRFILLIN 24 24
+ENDFIELD
+
+
+TEXT "Designer:  "  # designer 
+TLOC 1 29
+ENDTEXT 
+FIELD current_designer
+TLOC 4 29
+STRFILLIN 24 24
+ENDFIELD
+
+TEXT "Email: "   # email 
+TLOC 1 32
+ENDTEXT 
+FIELD current_email
+TLOC 4 32
+STRFILLIN 24 24
+ENDFIELD
+
+#place button
+FIELD place_techtable      
+FLOC 10 40
+MENUBUTTON "Place" 8 3
+ENDFIELD 
+
+#quit button 
+FIELD quit_techtable        
+FLOC 30 40
+MENUBUTTON "Quit" 8 3
+ENDFIELD 
+
+
+ENDTILE
+ENDFORM
