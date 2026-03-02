@@ -4,7 +4,7 @@
  * @Author: leo@purichip.com
  * @Date: 2026-02-17 00:19:37
  * @LastEditors: leo@purichip.com
- * @LastEditTime: 2026-02-26 20:39:00
+ * @LastEditTime: 2026-03-02 23:46:39
  */
 
  /*生成所有的目录
@@ -20,7 +20,7 @@
         |-BOM
         |-POS
   */
-axlCmdRegister("exb",  'ExportAllDir ?cmdType "general") ; export all directory of current project to a specific path
+axlCmdRegister("exa",  'ExportAllDir ?cmdType "general") ; export all directory of current project to a specific path
 
 /*单独的函数用于更新文件到-All目录下对应的子目录中，方便代码的维护和扩展
     cmd参数用于指定需要更新的文件类型，可以是SCH、PCB、DXF、CAM、ASM、POS或BOM中的一个，根据不同的cmd参数执行不同的文件复制操作
